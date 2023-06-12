@@ -4,6 +4,8 @@
 
 body{
  background: url("../img/movieproj.jpeg") no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
  font-family: 'Shrikhand', cursive;
  overflow: visible;
 }
@@ -27,6 +29,24 @@ h1{
 .col-6 #addMovieForm{
  margin-right: 100px;
 }
+
+.forms {
+ background-color: gray;
+ justify-content: space-evenly;
+}
+
+#loadingImg {
+ padding: 25em 0 0 40em;
+}
+
+#paw {
+ height: 40px;
+ width: 40px;
+ color: #ffc107;
+}
+
+
+
 
 
 
