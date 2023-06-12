@@ -1,0 +1,32 @@
+*{
+ box-sizing: border-box;
+}
+
+body{
+ background: url("../img/movieproj.jpeg") no-repeat;
+ font-family: 'Shrikhand', cursive;
+ overflow: visible;
+}
+
+h1{
+ color: white;
+}
+
+.col-6{
+ padding-top: 10px;
+ border: 1px solid;
+ border-radius: 1px;
+ background-color: white;
+}
+.col-6 #rating{
+ margin-top: 3px;
+}
+.col-6 #editRating{
+ margin-top: 3px;
+}
+.col-6 #addMovieForm{
+ margin-right: 100px;
+}
+
+
+
