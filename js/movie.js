@@ -12,7 +12,7 @@
         .then(resp => resp.json()).then(data => {
         console.log(data);
         document.getElementsByClassName('row')[0].innerHTML = renderMovies(data)
-        attachListeners(data);
+        attachListeners(data) || deleteMovies(data);
     });
 
     function attachListeners(data){
@@ -35,7 +35,6 @@
                     .then(data => {
                         console.log(data)
                         $(`#${data.id}`).replaceWith(updateMovies(data))
-                        // document.getElementsByClassName('row')[0].innerHTML += updateMovies(data)
                     })
                     .catch(/* handle errors */);
             })
@@ -63,6 +62,33 @@
 
     function updateMovies(data){
         return moviesRender(data);
+    }
+
+    function deleteMovies(data){
+        console.log(data)
+        data.forEach(function(movie){
+            $(`#deleteBtn-${movie.id}`).on("click", function(e){
+                e.preventDefault()
+                console.log(document.getElementById(`movie-title-${movie.id}`).innerText);
+                console.log(document.getElementById(`movie-rating-${movie.id}`).innerText);
+                const url = `https://tartan-leaf-yumberry.glitch.me/movies/${movie.id}`;
+                const options = {
+                    method: "DELETE",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                };
+                fetch(url, options)
+                    .then(()=> fetch("https://tartan-leaf-yumberry.glitch.me/movies"))
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        document.getElementsByClassName('row')[0].innerHTML = renderMovies(data);
+                    })
+                    .catch(/* handle errors */);
+            })
+        })
     }
 
 
