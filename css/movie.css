@@ -20,12 +20,15 @@ h1{
  border-radius: 1px;
  background-color: white;
 }
+
 .col-6 #rating{
  margin-top: 3px;
 }
+
 .col-6 #editRating{
  margin-top: 3px;
 }
+
 .col-6 #addMovieForm{
  margin-right: 100px;
 }

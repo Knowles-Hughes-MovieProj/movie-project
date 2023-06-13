@@ -35,6 +35,7 @@
     }
 
     $('#refreshBtn').on('click', function (data) {
+        data.preventDefault()
         const movieEntry = {title: `${userTitle.value}`, rating: `${userRating.value}`};
         const url = "https://tartan-leaf-yumberry.glitch.me/movies";
         const options = {
@@ -135,7 +136,7 @@
                     console.log(data);
                     $('#loadingImg').hide();
                 }
-            }, 3000);
+            });
     });
 
 
